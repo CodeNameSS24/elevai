@@ -22,7 +22,9 @@ const Header = () => {
               alt="Elevai Logo"
               width={200}
               height={60}
-              className="h-12 py-12 w-auto object-contain"
+              className="h-12 py-1 w-auto object-contain"
+              style={{ color: "transparent" }}
+              suppressHydrationWarning
             />
           </Link>
           <div className="flex item-center space-x-2 md:space-x-4">
@@ -34,49 +36,50 @@ const Header = () => {
                 </Button>
               </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Button>
-                  <StarIcon className="h-4 w-4" />
-                  <span className="hidden md:block">Growth Tools</span>
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link href={"/resume"} className="flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
-                    <span>Build Resume</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link
-                    href={"/ai-cover-letter"}
-                    className="flex items-center gap-2"
-                  >
-                    <PenBox className="h-4 w-4" />
-                    <span>Cover Letter</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href={"/interview"} className="flex items-center gap-2">
-                    <GraduationCap className="h-4 w-4" />
-                    <span>Interview Prep</span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Button>
+                    <StarIcon className="h-4 w-4" />
+                    <span className="hidden md:block">Growth Tools</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>
+                    <Link href={"/resume"} className="flex items-center gap-2">
+                      <FileText className="h-4 w-4" />
+                      <span>Build Resume</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link
+                      href={"/ai-cover-letter"}
+                      className="flex items-center gap-2"
+                    >
+                      <PenBox className="h-4 w-4" />
+                      <span>Cover Letter</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link
+                      href={"/interview"}
+                      className="flex items-center gap-2"
+                    >
+                      <GraduationCap className="h-4 w-4" />
+                      <span>Interview Prep</span>
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </SignedIn>
-            
-            
+
             <SignedOut>
               <SignInButton>
                 <Button variant="outline">Sign In</Button>
               </SignInButton>
             </SignedOut>
             <SignedIn>
-              <UserButton 
+              <UserButton
                 appearance={{
                   elements: {
                     avatarBox: "h-10 w-10",

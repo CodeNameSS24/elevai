@@ -4,4 +4,4 @@ const Page = () => {
   return <SignUp />;
 };
 
-export default Page
+export default Page; 
